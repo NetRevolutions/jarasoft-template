@@ -2,11 +2,11 @@
 
 # JARASOFT - Template
 
-Plantilla base para futuros proyectos (Basado en la arquitectura de FUSE Template y el Curso de Angular de Fernando Herrera)
+Plantilla base para futuros proyectos (Basado en la arquitectura de FUSE Template)
 
 ***Principales características:***
 
-1.- Los estilos SASS seran basados en boostrap
+1.- Los estilos CSS seran basados en boostrap
 
 2.- Los principales formularios seran tomados de AdminLTE
 
