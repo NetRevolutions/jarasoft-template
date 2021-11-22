@@ -1,8 +1,5 @@
 {
     "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-    "cli": {
-        "analytics": false
-    },
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
@@ -29,8 +26,17 @@
                         "polyfills": "src/polyfills.ts",
                         "tsConfig": "tsconfig.app.json",
                         "inlineStyleLanguage": "sass",
+                        "allowedCommonJsDependencies": [
+                            "apexcharts",
+                            "highlight.js",
+                            "crypto-js/enc-utf8",
+                            "crypto-js/hmac-sha256",
+                            "crypto-js/enc-base64"
+                        ],
                         "assets": [
                             "src/favicon.ico",
+                            "src/favicon-16x16.png",
+                            "src/favicon-32x32.png",
                             "src/assets"
                         ],
                         "styles": [
@@ -110,6 +116,8 @@
                         "inlineStyleLanguage": "sass",
                         "assets": [
                             "src/favicon.ico",
+                            "src/favicon-16x16.png",
+                            "src/favicon-32x32.png",
                             "src/assets"
                         ],
                         "styles": [
@@ -117,9 +125,22 @@
                         ],
                         "scripts": []
                     }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "options": {
+                        "lintFilePatterns": [
+                            "src/**/*.ts",
+                            "src/**/*.html"
+                        ]
+                    }
                 }
             }
         }
     },
-    "defaultProject": "jarasoft-template"
+    "defaultProject": "jarasoft-template",
+    "cli": {
+        "analytics": false,
+        "defaultCollection": "@angular-eslint/schematics"
+    }
 }
