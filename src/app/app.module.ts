@@ -1,8 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ExtraOptions, PreloadAllModules, RouterModule } from '@angular/router';
+import { MarkdownModule } from 'ngx-markdown';
 import { AppComponent } from './app.component';
+import { appRoutes } from './app.routing';
+import { LayoutModule } from './layout/layout.module';
+
+const routerConfig: ExtraOptions = {
+  preloadingStrategy       : PreloadAllModules,
+  scrollPositionRestoration: 'enabled'    
+}
 
 @NgModule({
   declarations: [
@@ -10,7 +18,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes, routerConfig),
+
+    LayoutModule,
+    MarkdownModule.forRoot({})
+
   ],
   providers: [],
   bootstrap: [AppComponent]
