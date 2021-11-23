@@ -1,0 +1,19 @@
+<div class="wrapper">
+    <app-header></app-header>
+    <app-sidebar></app-sidebar>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <app-breadcrumbs></app-breadcrumbs>
+
+        <!-- Main content -->
+        <div class="content">
+            <div class="container-fluid">
+                <!-- Mi sistema de Rutas -->
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+    <!-- /.content-wrapper -->
+    <app-settings-sidebar></app-settings-sidebar>
+    <app-footer></app-footer>
+</div>
