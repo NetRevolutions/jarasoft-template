@@ -20,10 +20,10 @@ import { Grafica1Component } from './pages/grafica1/grafica1.component';
 import { PagesComponent } from './pages/pages.component';
 
 
-const routerConfig: ExtraOptions = {
-  preloadingStrategy       : PreloadAllModules,
-  scrollPositionRestoration: 'enabled'    
-}
+// const routerConfig: ExtraOptions = {
+//   preloadingStrategy       : PreloadAllModules,
+//   scrollPositionRestoration: 'enabled'    
+// }
 
 @NgModule({
   declarations: [
@@ -45,6 +45,7 @@ const routerConfig: ExtraOptions = {
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+
     MarkdownModule.forRoot({})
 
   ],
