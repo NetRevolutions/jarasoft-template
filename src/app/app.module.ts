@@ -10,20 +10,11 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { NoPageFoundComponent } from './pages/no-page-found/no-page-found.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { SettingsSidebarComponent } from './shared/settings-sidebar/settings-sidebar.component';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { ProgressComponent } from './pages/progress/progress.component';
 import { Grafica1Component } from './pages/grafica1/grafica1.component';
-import { PagesComponent } from './pages/pages.component';
+import { LayoutModule } from './layout/layout.module';
+import { CoreModule } from './core/core.module';
 
-
-// const routerConfig: ExtraOptions = {
-//   preloadingStrategy       : PreloadAllModules,
-//   scrollPositionRestoration: 'enabled'    
-// }
 
 @NgModule({
   declarations: [
@@ -31,21 +22,20 @@ import { PagesComponent } from './pages/pages.component';
     LoginComponent,
     RegisterComponent,
     NoPageFoundComponent,
-    DashboardComponent,
-    BreadcrumbsComponent,
-    SidebarComponent,
-    HeaderComponent,
-    FooterComponent,
-    SettingsSidebarComponent,
+    DashboardComponent,   
     ProgressComponent,
-    Grafica1Component,
-    PagesComponent
+    Grafica1Component    
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
 
+    // Core module of the application
+    CoreModule,
+
+    // Layout module of the application
+    LayoutModule,
     MarkdownModule.forRoot({})
 
   ],

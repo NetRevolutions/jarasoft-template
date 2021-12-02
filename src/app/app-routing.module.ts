@@ -5,12 +5,12 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ProgressComponent } from './pages/progress/progress.component';
 import { Grafica1Component } from './pages/grafica1/grafica1.component';
-import { PagesComponent } from './pages/pages.component';
+import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
   { 
     path: '', 
-    component: PagesComponent,
+    component: LayoutComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent, data: { title: 'Dashboard' } },
       { path: 'progress', component: ProgressComponent, data: { title: 'Progress' } },
@@ -21,7 +21,7 @@ const routes: Routes = [
 
   {
     path: 'error',
-    component: PagesComponent,
+    component: LayoutComponent,
     children: [
       { path: 'error-404',
         data: { title: 'Error-404' },
