@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { SharedModule } from '../shared/shared.module';
-
-// Components
 import { LayoutComponent } from './layout.component';
 import { BreadcrumbsComponent } from './layouts/breadcrumbs/breadcrumbs.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { HeaderComponent } from './layouts/header/header.component';
 import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 import { SettingsSidebarComponent } from './layouts/settings-sidebar/settings-sidebar.component';
-import { LanguagesModule } from './common/languages/languages.module';
+import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,12 +14,12 @@ import { LanguagesModule } from './common/languages/languages.module';
     FooterComponent,
     HeaderComponent,
     SidebarComponent,
-    SettingsSidebarComponent
+    SettingsSidebarComponent,
+    LayoutComponent
   ],
   imports: [
     SharedModule,
-    RouterModule,
-    LanguagesModule
+    RouterModule
   ],
   exports: [
     BreadcrumbsComponent,

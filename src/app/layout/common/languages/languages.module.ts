@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { LanguagesComponent } from './languages.component';
-import { SharedModule } from '../../../shared/shared.module';
+import { CommonModule } from '@angular/common';
+import { LanguagesComponent } from '../languages.component';
 
 
 
@@ -9,10 +9,7 @@ import { SharedModule } from '../../../shared/shared.module';
     LanguagesComponent
   ],
   imports: [
-    SharedModule
-  ],
-  exports: [
-    LanguagesComponent
+    CommonModule
   ]
 })
 export class LanguagesModule { }
