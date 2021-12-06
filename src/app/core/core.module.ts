@@ -1,12 +1,26 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { TranslocoCoreModule } from './transloco/transloco.module';
 
 
 @NgModule({
-  declarations: [],
   imports: [
-    CommonModule
+    TranslocoCoreModule
   ]
 })
-export class CoreModule { }
+export class CoreModule 
+{ 
+  /**
+   * Constructor   
+   */
+  constructor(
+    @Optional() @SkipSelf() parentModule?: CoreModule
+  )
+  {
+    // Do not allow multiple injections
+    if (parentModule)
+    {
+      throw new Error('CoreModule has already been loaded. Import this module in the AppModule only.');
+      
+    }
+  }
+}
