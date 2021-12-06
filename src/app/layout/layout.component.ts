@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, OnInit, Renderer2, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReplaySubject } from 'rxjs';
 
@@ -15,9 +15,7 @@ export class LayoutComponent implements OnInit {
 
   constructor(
     private _changeDetectorRef: ChangeDetectorRef,
-    private _elementRef: ElementRef,
-    private _renderer2: Renderer2,
-    private _router: Router
+    
   ) { }
 
   // -----------------------------------------------------------------------------------------------------
