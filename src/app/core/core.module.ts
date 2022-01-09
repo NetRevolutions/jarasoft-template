@@ -1,13 +1,13 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 
 @NgModule({
-  declarations: [],
-  imports: [
-
-  ]
+  imports: []
 })
-export class CoreModule {
-
+export class CoreModule
+{
+  /**
+   * Constructor
+   */
   constructor(
     @Optional() @SkipSelf() parentModule?: CoreModule
   )
