@@ -1,0 +1,11 @@
+<!-- Language Dropdown Menu -->
+<app-dropdown>
+    <ng-container dropdown-button>
+        <i [ngClass]="'flag-icon flag-icon-' + flagCodes[activeLanguage]"></i>
+    </ng-container>
+    <ng-container dropdown-menu>
+        <span [ngClass]="'dropdown-item' + (lang == activeLanguage ? ' active': '')" *ngFor="let lang of availableLangs; trackBy: trackByFn" (click)="setActiveLanguage(lang)">
+          <i [ngClass]="'flag-icon flag-icon-' + flagCodes[lang] + ' mr-2'"></i>&nbsp;{{flagLabels[lang]}}
+      </span>
+    </ng-container>
+</app-dropdown>

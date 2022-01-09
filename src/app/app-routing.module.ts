@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ExtraOptions, PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
@@ -7,17 +7,22 @@ import { ProgressComponent } from './pages/progress/progress.component';
 import { Grafica1Component } from './pages/grafica1/grafica1.component';
 import { LayoutComponent } from './layout/layout.component';
 
+const routerConfig: ExtraOptions = {
+  preloadingStrategy        : PreloadAllModules,
+  scrollPositionRestoration : 'enabled'
+};
+
 const routes: Routes = [
-  { 
-    path: '', 
+  {
+    path: '',
     component: LayoutComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent, data: { title: 'Dashboard' } },
       { path: 'progress', component: ProgressComponent, data: { title: 'Progress' } },
-      { path: 'grafica1', component: Grafica1Component, data: { title: 'Grafica #1' } },      
+      { path: 'grafica1', component: Grafica1Component, data: { title: 'Grafica #1' } },
       { path: '', redirectTo: '/dashboard', pathMatch: 'full'}
     ]
-  },  
+  },
 
   {
     path: 'error',
@@ -33,9 +38,9 @@ const routes: Routes = [
       },
       { path: '', redirectTo: '/error/error-404', pathMatch: 'full'}
     ]
-  },  
+  },
   { path: 'register', component: RegisterComponent, data: { title: 'Register' } },
-  { path: 'login', component: LoginComponent, data: { title: 'Login' } },     
+  { path: 'login', component: LoginComponent, data: { title: 'Login' } },
   { path: '**', redirectTo: 'error/error-404'}
 ];
 
@@ -43,7 +48,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [],
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, routerConfig)
   ],
   exports: [RouterModule]
 })

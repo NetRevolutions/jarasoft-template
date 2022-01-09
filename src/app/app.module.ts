@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ExtraOptions, PreloadAllModules, RouterModule } from '@angular/router';
 import { MarkdownModule } from 'ngx-markdown';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -14,7 +13,8 @@ import { ProgressComponent } from './pages/progress/progress.component';
 import { Grafica1Component } from './pages/grafica1/grafica1.component';
 import { LayoutModule } from './layout/layout.module';
 import { CoreModule } from './core/core.module';
-
+import { HttpClientModule } from '@angular/common/http';
+import { TranslocoRootModule } from './transloco-root.module';
 
 @NgModule({
   declarations: [
@@ -22,22 +22,23 @@ import { CoreModule } from './core/core.module';
     LoginComponent,
     RegisterComponent,
     NoPageFoundComponent,
-    DashboardComponent,   
+    DashboardComponent,
     ProgressComponent,
-    Grafica1Component    
+    Grafica1Component
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
 
     // Core module of the application
     CoreModule,
 
     // Layout module of the application
     LayoutModule,
-    MarkdownModule.forRoot({})
-
+    MarkdownModule.forRoot({}),
+    TranslocoRootModule
   ],
   providers: [],
   bootstrap: [AppComponent]
